@@ -96,6 +96,8 @@ function Baby(name, age, favoriteToy) {
  Person.call(this, name, age);
  this.favoriteToy = favoriteToy;
 }
+
+Baby.prototype = Object.create(Person.prototype);
 Baby.prototype.play = function(){
   return `Playing with ${this.favoriteToy}`
 }
@@ -103,10 +105,10 @@ Baby.prototype.play = function(){
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window binding = unless otherwise specified, "this" will refer to the window object
+  2. Implicit binding = "this" is to the left of the .
+  3. New binding = in constructor functions, "this" refers to the object created by the constructor
+  4. Explicit binding = when we use .call or .apply method, "this" is explicity defined
 */
 
 
